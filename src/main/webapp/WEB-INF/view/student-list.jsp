@@ -12,7 +12,7 @@
 
 <!-- ModelAttribute:students -->
 <div align="center">
-<table border="1">
+<table border="1" >
 <thead>
 <tr>
 <th>id</th>
