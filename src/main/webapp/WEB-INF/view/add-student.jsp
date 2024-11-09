@@ -12,6 +12,7 @@
 <h3>Add Student</h3>
 <!-- crate a spring form where the user can enter data -->
 <form:form action="save-student" modelAttribute="student" method="post">
+<form:hidden path="id"/>
 <label>Name:</label>
 <form:input path="name"/>
 <br>
