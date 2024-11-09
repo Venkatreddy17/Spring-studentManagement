@@ -3,7 +3,7 @@ package com.seleniumexpress.sm.api;
 public class Student {
 	private int id;
 	private String name;
-	private long mobile;
+	private Long mobile;
 	private String country;
 	public int getId() {
 		return id;
@@ -17,10 +17,11 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public long getMobile() {
+	
+	public Long getMobile() {
 		return mobile;
 	}
-	public void setMobile(long mobile) {
+	public void setMobile(Long mobile) {
 		this.mobile = mobile;
 	}
 	public String getCountry() {
@@ -33,6 +34,7 @@ public class Student {
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", mobile=" + mobile + ", country=" + country + "]";
 	}
+	
 	
 	
 }

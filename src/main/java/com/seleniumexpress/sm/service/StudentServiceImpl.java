@@ -31,4 +31,21 @@ public class StudentServiceImpl implements StudentService {
 		
 	}
 
+	@Override
+	public Student getStudent(int id) {
+		
+		return studentDAO.getStudent(id);
+	}
+
+	@Override
+	public void updateStudent(Student student) {
+		studentDAO.updateStudent(student);
+	}
+
+	@Override
+	public void delateStudent(int id) {
+		studentDAO.delateStudent(id);
+		
+	}
+
 }

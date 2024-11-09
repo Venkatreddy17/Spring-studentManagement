@@ -7,12 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.seleniumexpress.sm.DAO.StudentDAO;
-import com.seleniumexpress.sm.DAO.StudentDAOImpl;
 import com.seleniumexpress.sm.api.Student;
-import com.seleniumexpress.sm.api.StudentDTO;
 import com.seleniumexpress.sm.service.StudentService;
 
 //Presentation Layer
@@ -51,9 +48,39 @@ public class StudentController {
 	public String saveStudent(Student student) {
         System.out.println(student);
 		
-        
+        //condition check
+      //if the user does a id -> do a insert
+        //if the user does a id -> do a update 
       //do a Dao call on the student
-        studentService.saveStudent(student);
+        
+        if(student.getId()==0) {
+        	//do a insert
+        	studentService.saveStudent(student);
+        }else {
+        	//do an update
+        	studentService.updateStudent(student);
+        }
+        
+        
+		return "redirect:/showStudent";
+	}
+	
+	@GetMapping("/updateStudent")
+	public String updateStudent(@RequestParam("userId") int id,Model model) {
+       
+		System.out.println("update user id is "+id);
+		Student theStudent = studentService.getStudent(id);
+		model.addAttribute("student", theStudent);
+		return "add-student";
+	}
+	
+	@GetMapping("/delateStudent")
+	public String delateStudent(@RequestParam("userId") int id) {
+       
+		System.out.println("update user id is "+id);
+		
+		studentService.delateStudent(id);
+		
 		return "redirect:/showStudent";
 	}
 }

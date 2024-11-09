@@ -30,6 +30,8 @@
 <td>${student.name}</td>
 <td>${student.mobile}</td>
 <td>${student.country}</td>
+<td><a href="/studentdb2/updateStudent?userId=${student.id}">update</a></td>
+<td><a href="/studentdb2/delateStudent?userId=${student.id}" onclick="if(!(confirm('Are you sure want to delate this Student!'))) return false">Delete</a></td>
 </tr>
 </c:forEach>
 </table>

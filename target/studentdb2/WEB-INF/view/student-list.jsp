@@ -12,6 +12,9 @@
 
 <!-- ModelAttribute:students -->
 <div align="center">
+<form action="showStudentPage" >
+<input type="submit" value="Add Student">
+</form>
 <table border="1" >
 <thead>
 <tr>
@@ -27,6 +30,7 @@
 <td>${student.name}</td>
 <td>${student.mobile}</td>
 <td>${student.country}</td>
+<td><a href="/studentdb2/updateStudent?userId=${student.id}">update</a></td>
 </tr>
 </c:forEach>
 </table>
