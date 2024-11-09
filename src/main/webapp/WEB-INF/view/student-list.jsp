@@ -12,6 +12,9 @@
 
 <!-- ModelAttribute:students -->
 <div align="center">
+<form action="showStudentPage" >
+<input type="submit" value="Add Student">
+</form>
 <table border="1" >
 <thead>
 <tr>
